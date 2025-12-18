@@ -5,7 +5,7 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
     static public TaskManager Instance;
-    public List<GameObject> _lines = new List<GameObject>();
+    public List<Line> _lines = new List<Line>();
     [SerializeField] private int _maxLvlLine = 3;
     
 
@@ -30,6 +30,9 @@ public class TaskManager : MonoBehaviour
     }
     public void StartGame()
     {
-        
+        for (int i = 0; i < _lines.Count; i++)
+        {
+            _lines[i].ActivatePhysic();
+        }
     }
 }
