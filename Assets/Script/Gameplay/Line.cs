@@ -11,6 +11,7 @@ public class Line : MonoBehaviour
     
     [Header("Optimization")]
     [SerializeField] private float _simplifyTolerance = 0.15f;
+    private TaskManager _taskManager;
     
     void Start()
     {
@@ -19,6 +20,8 @@ public class Line : MonoBehaviour
         _rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         _rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         _collider.edgeRadius = 0.05f;
+        _taskManager = TaskManager.Instance;
+        _taskManager.StartGameEvent += ActivatePhysic;
     }
 
     public void SetPosition(Vector2 pos)
@@ -57,7 +60,7 @@ public class Line : MonoBehaviour
         Vector3 lastWorldPos = transform.TransformPoint(_renderer.GetPosition(_renderer.positionCount - 1));
         return Vector2.Distance(lastWorldPos, pos) > DrawManager.RESOLUTION;
     }
-    public void ActivatePhysic()
+    private void ActivatePhysic()
     {
         SimplifyLine(); 
         CenterLineRenderer(); 
