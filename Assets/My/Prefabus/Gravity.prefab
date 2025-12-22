@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6829381895938949670}
   - component: {fileID: 8389425137684769831}
   - component: {fileID: 6482209605139590048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gravity
   m_TagString: Untagged
   m_Icon: {fileID: 0}

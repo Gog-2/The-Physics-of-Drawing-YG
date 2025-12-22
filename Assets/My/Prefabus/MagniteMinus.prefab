@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8540878215891132378}
   - component: {fileID: 4142242850892004207}
   - component: {fileID: 7548534498951951407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MagniteMinus
   m_TagString: Untagged
   m_Icon: {fileID: 0}

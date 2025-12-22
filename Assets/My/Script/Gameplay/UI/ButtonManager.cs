@@ -13,8 +13,15 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void GoToMainMenuBeatedLvl()
+    {
+        AdsAndLvlOpen.instance.LvlBeated(SceneManager.GetActiveScene().buildIndex);
+        GoToMainMenu();
+    }
+
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AdsAndLvlOpen.instance.LvlBeated(SceneManager.GetActiveScene().buildIndex);
     }
 }

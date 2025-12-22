@@ -9,6 +9,7 @@ public class LvlManager : MonoBehaviour
     void Start()
     {
         SpawnLvl();
+        BeatedLvl = PlayerPrefs.GetInt("Level", 0);
     }
 
     private void SpawnLvl()

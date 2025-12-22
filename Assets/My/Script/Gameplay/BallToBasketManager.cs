@@ -11,7 +11,7 @@ public class BallToBasketManager : MonoBehaviour
     public int id;
     private int _inBucket = 0;
     [SerializeField] private TextHolder _textHolderPrefab;
-    [SerializeField] private GameObject _textHolderParent;
+    [SerializeField]private GameObject _textHolderParent;
     private TextHolder _textHolder;
     [SerializeField] private string _textHolderText;
     private int _keyAutorization;
@@ -27,7 +27,7 @@ public class BallToBasketManager : MonoBehaviour
     private void Start()
     {
         _keyAutorization = AuthorizationTask.instance.GetKey();
-        _textHolder.Text($"{_textHolderText} {Ammount}/{_inBucket}");
+        _textHolder.Text($"{id}. {_textHolderText} {Ammount}/{_inBucket}");
     }
     private void UpdateTextHolder() => _textHolder.Text(_textHolderText + $"{Ammount}/{_inBucket}");
     
