@@ -1,4 +1,6 @@
 Authorization v1.022
+InterstitialAdv v1.01
 PlayerStats v1.01
 RedefinePlayerPrefs v1.001
+StickyAdv v1.0
 Storage v1.021
