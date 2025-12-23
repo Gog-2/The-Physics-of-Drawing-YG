@@ -59,7 +59,7 @@ public class BallBox : MonoBehaviour
    {
        for (int i = 0; i < ammount; i++)
        {
-           _ballCurrent = Instantiate(_ballPrefab, _ballContainer.position, Quaternion.identity);
+           _ballCurrent = Instantiate(_ballPrefab, _ballContainer);
            _ballCurrent.transform.position = new Vector3(_ballCurrent.transform.position.x,_ballCurrent.transform.position.y,0);
            _ballCurrent.Id = _id;
            Rigidbody2D _ballRb = _ballCurrent.GetComponent<Rigidbody2D>();
@@ -96,6 +96,7 @@ public class BallBox : MonoBehaviour
        sr = _sides[id].GetComponent<SpriteRenderer>();
        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.3f);
    }
+   private void OnDestroy() => _taskManager.StartGameEvent -= Activate; 
 }
 
 public enum BoxSideOpen

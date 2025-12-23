@@ -9,6 +9,7 @@ public class DrawManager : MonoBehaviour
     [SerializeField] private GameObject _parentLine;
     private bool _gameStarted = false;
     private TaskManager _taskManager;
+    private LvlLoader _lvlLoader;
     
     public const float RESOLUTION = 0.1f;
     
@@ -17,7 +18,9 @@ public class DrawManager : MonoBehaviour
     void Start()
     { 
         _taskManager = TaskManager.Instance;
-        _taskManager.StartGameEvent += GameStarted;   
+        _taskManager.StartGameEvent += GameStarted;
+        _lvlLoader = LvlLoader.Instance;
+        _lvlLoader.Reload += GameReloaded;
         _cam = Camera.main;
     }
     
@@ -84,4 +87,5 @@ public class DrawManager : MonoBehaviour
         _currentLine.SetPosition(mousePos);
     }
     private void GameStarted() => _gameStarted = true;
+    private void GameReloaded() => _gameStarted = false;
 }

@@ -8,6 +8,7 @@ public class Bucket : MonoBehaviour
     private BallToBasketManager _ballToBasketManager;
     private int _counterValue = 0;
     [SerializeField] private TMP_Text _idText;
+    private LvlLoader _lvlLoader;
 
     private int _counter
     {
@@ -18,6 +19,7 @@ public class Bucket : MonoBehaviour
         set
         {
             _counterValue = value;
+            if(_ballToBasketManager == null) return;
             UpdateStatus();
         }
     }

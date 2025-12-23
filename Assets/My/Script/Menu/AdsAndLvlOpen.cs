@@ -21,13 +21,4 @@ public class AdsAndLvlOpen : MonoBehaviour
         }
         _openLvl = PlayerPrefs.GetInt("Level", 0);
     }
-
-    public void LvlBeated(int value)
-    {
-        _counterLvl++;
-        if (value >= _openLvl)
-        {
-            PlayerPrefs.SetInt("Level", value);
-        }
-    }
 }

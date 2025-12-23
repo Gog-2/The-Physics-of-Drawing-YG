@@ -12,6 +12,7 @@ public class Line : MonoBehaviour
     [Header("Optimization")]
     [SerializeField] private float _simplifyTolerance = 0.15f;
     private TaskManager _taskManager;
+    private LvlLoader _lvlLoader;
     
     void Start()
     {
@@ -22,6 +23,8 @@ public class Line : MonoBehaviour
         _collider.edgeRadius = 0.05f;
         _taskManager = TaskManager.Instance;
         _taskManager.StartGameEvent += ActivatePhysic;
+        _lvlLoader = LvlLoader.Instance;
+        _lvlLoader.Reload += DestroySelf;
     }
 
     public void SetPosition(Vector2 pos)
@@ -120,5 +123,12 @@ public class Line : MonoBehaviour
         _collider.points = _points.ToArray();
         _collider.enabled = true;
         _rb.centerOfMass = Vector2.zero;
+    }
+
+    private void DestroySelf()
+    {
+        _taskManager.StartGameEvent -= ActivatePhysic;
+        Destroy(gameObject);
+        _lvlLoader.Reload -= DestroySelf;
     }
 }

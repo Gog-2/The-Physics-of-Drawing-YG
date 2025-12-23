@@ -7,6 +7,7 @@ public class AuthorizationTask : MonoBehaviour
     static public AuthorizationTask instance;
     [SerializeField]private List<bool> _tasks =  new List<bool>();
     [SerializeField] private GameObject _endGame;
+    private LvlLoader _lvlLoader;
 
     private void Awake()
     {
@@ -18,6 +19,8 @@ public class AuthorizationTask : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        _lvlLoader = LvlLoader.Instance;
+        _lvlLoader.Reload += ClearTasks;
     }
 
     public int GetKey()
@@ -47,4 +50,6 @@ public class AuthorizationTask : MonoBehaviour
     {
         _endGame.SetActive(true);
     }
+
+    public void ClearTasks() =>_tasks.Clear();
 }

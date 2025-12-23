@@ -8,7 +8,6 @@ public class TaskManager : MonoBehaviour
     static public TaskManager Instance;
     public List<Line> _lines = new List<Line>();
     [SerializeField] private int _maxLvlLine = 3;
-    [SerializeField] private List<bool> _tasks = new List<bool>();
     [SerializeField] private List<TextHolder> _textTask = new List<TextHolder>();
     public event Action StartGameEvent;
 
@@ -24,7 +23,7 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    public void ClearEsxes()
+    public void ClearLine()
     {
         for (int i = _maxLvlLine; i < _lines.Count; i--)
         {

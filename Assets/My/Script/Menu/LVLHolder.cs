@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using PlayerPrefs = RedefineYG.PlayerPrefs;
 
 public class LVLHolder : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class LVLHolder : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(_lvl);
+        PlayerPrefs.SetInt("ActiveLvl", _lvl);
+        SceneManager.LoadScene(1);
     }
 }

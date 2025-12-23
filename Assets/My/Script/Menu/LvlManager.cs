@@ -1,4 +1,5 @@
 using UnityEngine;
+using PlayerPrefs = RedefineYG.PlayerPrefs;
 
 public class LvlManager : MonoBehaviour
 {
@@ -8,8 +9,8 @@ public class LvlManager : MonoBehaviour
     [SerializeField] private int BeatedLvl;
     void Start()
     {
-        SpawnLvl();
         BeatedLvl = PlayerPrefs.GetInt("Level", 0);
+        SpawnLvl();
     }
 
     private void SpawnLvl()
@@ -19,7 +20,7 @@ public class LvlManager : MonoBehaviour
         {
             if (i == 11) j++;
             LVLHolder lvlHolder = Instantiate(lvlHolderPrefab, lvlList[j].transform);
-            lvlHolder.Init(i,i > BeatedLvl + 1);
+            lvlHolder.Init(i, i > BeatedLvl);
         }
     }
 }
