@@ -916,6 +916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2f9bb1e51bfcd409bf8d5f71fe7bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _changeGravityAudio: {fileID: 0}
+  _changeGravityClip: {fileID: 0}
 --- !u!1 &4412053631417437608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1106,7 @@ MonoBehaviour:
   _textHolderPrefab: {fileID: 1007537669687834006, guid: 6a44d60848622cf4eb5d32a329d8caec, type: 3}
   _textHolderParent: {fileID: 0}
   _textHolderText: "\u0428\u0430\u0440\u0438\u043A\u043E\u0432 \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0435"
+  _textHolderTextEng: Balls in a basket
 --- !u!1 &5171724844458442043
 GameObject:
   m_ObjectHideFlags: 0

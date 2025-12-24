@@ -39,6 +39,7 @@ public class LvlLoader : MonoBehaviour
         if (_currentLvl < 0 || _currentLvl >= Lvls.Length)
         {
             Debug.LogError($"Уровень {_currentLvl} не существует! Всего уровней: {Lvls.Length}");
+            PlayerPrefs.SetInt("ActiveLvl",1);
             _currentLvl = 0;
         }
         _activeLvl = Instantiate(Lvls[_currentLvl], _parentLvl.position, Quaternion.identity);   

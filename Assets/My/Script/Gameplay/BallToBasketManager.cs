@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using YG;
 public class BallToBasketManager : MonoBehaviour
 {
     public bool MadedTask = false;
@@ -14,6 +14,7 @@ public class BallToBasketManager : MonoBehaviour
     [SerializeField]private GameObject _textHolderParent;
     private TextHolder _textHolder;
     [SerializeField] private string _textHolderText;
+    [SerializeField] private string _textHolderTextEng;
     private int _keyAutorization;
     private LvlLoader _lvlLoader;
     private bool _changelvl = false;
@@ -23,14 +24,21 @@ public class BallToBasketManager : MonoBehaviour
         _textHolderParent = TaskConnect.instance.gameObject;
         _textHolder = Instantiate(_textHolderPrefab, _textHolderParent.transform);
         _keyAutorization = AuthorizationTask.instance.GetKey();
-        _id =  _keyAutorization;
-        _textHolder.Text($"{_id}. {_textHolderText} {Ammount}/{_inBucket}");
+        _id = _keyAutorization;
+        ChangeText();
         _box.Intz(Ammount,_sideOpen,_id);
         _bucket.Intz(this,_id);
         _lvlLoader = LvlLoader.Instance;
         _lvlLoader.Reload += Destroy;
     }
-    private void UpdateTextHolder() => _textHolder.Text(_textHolderText + $"{Ammount}/{_inBucket}");
+
+    private void UpdateTextHolder() => ChangeText();
+
+    private void ChangeText()
+    {
+        if (YG2.lang == "ru") _textHolder.Text($"{_id}. {_textHolderText} {Ammount}/{_inBucket}");
+        else _textHolder.Text($"{_id}. {_textHolderTextEng} {Ammount}/{_inBucket}");
+    }
     
     public void UpdateValueInBucket(int value)
     {

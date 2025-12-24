@@ -1,23 +1,25 @@
 {
-    "stringKeys": [],
-    "stringValues": [],
-    "floatKeys": [],
-    "floatValues": [],
-    "intKeys": [
-        "ActiveLvl",
-        "Level"
-    ],
-    "intValues": [
-        3,
-        15
-    ],
-    "intExample": 5,
-    "strExample": "Hello!",
-    "boolExample": [
-        false,
-        false,
-        false,
-        false
-    ],
-    "idSave": 37
+  "stringKeys": [],
+  "stringValues": [],
+  "floatKeys": [],
+  "floatValues": [],
+  "intKeys": [
+    "ActiveLvl",
+    "Level",
+    "LevelsBeforeAdCounter"
+  ],
+  "intValues": [
+    3,
+    15,
+    2
+  ],
+  "intExample": 5,
+  "strExample": "Hello!",
+  "boolExample": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "idSave": 39
 }

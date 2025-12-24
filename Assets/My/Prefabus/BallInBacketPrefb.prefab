@@ -54,6 +54,7 @@ MonoBehaviour:
   _textHolderPrefab: {fileID: 1007537669687834006, guid: 6a44d60848622cf4eb5d32a329d8caec, type: 3}
   _textHolderParent: {fileID: 0}
   _textHolderText: "\u0428\u0430\u0440\u0438\u043A\u043E\u0432 \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0435"
+  _textHolderTextEng: Balls in a basket
 --- !u!1 &525009832021731422
 GameObject:
   m_ObjectHideFlags: 0
