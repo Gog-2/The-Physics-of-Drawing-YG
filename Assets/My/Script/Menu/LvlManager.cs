@@ -9,7 +9,7 @@ public class LvlManager : MonoBehaviour
     [SerializeField] private int BeatedLvl;
     void Start()
     {
-        BeatedLvl = PlayerPrefs.GetInt("Level", 0);
+        BeatedLvl = PlayerPrefs.GetInt("Level", 1);
         SpawnLvl();
     }
 

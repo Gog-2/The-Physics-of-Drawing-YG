@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public class VolumeController : MonoBehaviour
     [Header("VFX Test Sound")]
     [SerializeField]private AudioClip testVFXClip;
     [SerializeField]private AudioSource testAudioSource;
+    private bool playing = false;
+    private bool start = true;
 
     void Start()
     {
@@ -28,28 +31,41 @@ public class VolumeController : MonoBehaviour
         _masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         vfxSlider.onValueChanged.AddListener(SetVFXVolume);
+        start = false;
     }
 
     public void SetMasterVolume(float sliderValue)
     {
-        float volume = Mathf.Log10(sliderValue) * 20;
+        float volume = sliderValue > 0 ? Mathf.Log10(sliderValue) * 20 : -80f;
         audioMixer.SetFloat("MasterVolume", volume);
         PlayerPrefs.SetFloat("MasterVol", sliderValue);
     }
 
     public void SetMusicVolume(float sliderValue)
     {
-        float volume = Mathf.Log10(sliderValue) * 20;
+        float volume = sliderValue > 0 ? Mathf.Log10(sliderValue) * 20 : -80f;
         audioMixer.SetFloat("MusicVolume", volume);
         PlayerPrefs.SetFloat("MusicVol", sliderValue);
     }
 
     public void SetVFXVolume(float sliderValue)
     {
-        float volume = Mathf.Log10(sliderValue) * 20;
+        float volume = sliderValue > 0 ? Mathf.Log10(sliderValue) * 20 : -80f;
         audioMixer.SetFloat("VFXVolume", volume);
         PlayerPrefs.SetFloat("VFXVol", sliderValue);
-        testAudioSource.PlayOneShot(testVFXClip);
+        if (!playing && !start)
+        {
+            testAudioSource.PlayOneShot(testVFXClip);
+            StartCoroutine(CheckMusicVolume());
+        }
+    }
+
+
+    private IEnumerator CheckMusicVolume()
+    {
+        playing = true;
+        yield return new WaitForSecondsRealtime(0.4f);
+        playing = false;
     }
 
     void OnDestroy()

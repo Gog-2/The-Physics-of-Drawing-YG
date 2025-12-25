@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 14cecb38b4158224c9a5cdb7da388b8d
+guid: eacc5138e49f8d746a9b0e627c7c32c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6579646347950599832
-    second: 250px-Flag_of_the_United_Kingdom_-283-5-29.svg_png_0
+      213: -469439480844486577
+    second: LogoPhihykDrawENg_0
+  - first:
+      213: -730225678626432925
+    second: LogoPhihykDrawENg_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,7 +100,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +113,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 250px-Flag_of_the_United_Kingdom_-283-5-29.svg_png_0
+      name: LogoPhihykDrawENg_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 250
-        height: 150
+        x: 7
+        y: 34
+        width: 732
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86155bac18660b4a0800000000000000
-      internalID: -6579646347950599832
+      spriteID: f4878b487473c79f0800000000000000
+      internalID: -469439480844486577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoPhihykDrawENg_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 19
+        width: 173
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3685a9b3d97bdd5f0800000000000000
+      internalID: -730225678626432925
       vertices: []
       indices: 
       edges: []
@@ -151,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      250px-Flag_of_the_United_Kingdom_-283-5-29.svg_png_0: -6579646347950599832
+      LogoPhihykDrawENg_0: -469439480844486577
+      LogoPhihykDrawENg_1: -730225678626432925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
